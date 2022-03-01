@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>A-Frame Demo</title>\
+	<!--link to aframe library-->
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<!--link to env library-->
+	  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
+</head>
+<body>
+	<a-scene>
+		<a-assets>
+      		<img id="dia" src="imgs/wawpap.jpg" >
+      		<img id="floortex" src="imgs/ice.webp">
+    	</a-assets>
+		<a-box 
+			src="#dia"
+	  		position = "0 15 0"
+	  		rotation="33 45 0"
+	  		scale="5 5 5"
+	  		animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true">
+	  		<!--pos = (x, y, z)-->
+	  		<a-sphere src="#dia" position="1 0 3"></a-sphere>
+	  	</a-box>
+
+	  	<!--<a-entity environment="preset: yavapai; dressingAmount: 500"></a-entity>-->
+
+	  	<!--custom sky, doesn't work for whatever reason-->
+	  	<a-sky color="pink" ></a-sky>
+
+
+	  	<!--creating ground. default rotation at -90 to allign with the ground-->
+	  	<a-plane src = "#floortex" rotation="-90 0 0" width="300" height="300" repeat="10 10"></a-plane>
+
+	  	<!--Lighting-->
+	  	<a-light type="ambient" color="#445451"></a-light>
+  		<a-light type="point" intensity="2" position="20 40 40"></a-light>
+
+	  </a-box>
+	</a-scene>
+</body>
+
+</html>
